@@ -1,0 +1,1 @@
+alert("Now I'm working from a JS file - install TS you lazy dawgs");
