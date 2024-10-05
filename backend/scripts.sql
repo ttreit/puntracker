@@ -2,7 +2,13 @@
 CREATE TABLE users (id SERIAL UNIQUE PRIMARY KEY, name varchar(30) UNIQUE);
 
 -- Create table puns
-CREATE TABLE puns (id SERIAL UNIQUE, user_fk INT, pun TEXT, created_date DATE, CONSTRAINT users_fk_constraint FOREIGN KEY(id) REFERENCES users(id) ON DELETE SET NULL);
+CREATE TABLE puns (
+    id SERIAL UNIQUE,
+    user_fk INT,
+    pun TEXT,
+    created_date DATE, 
+    CONSTRAINT users_fk_constraint FOREIGN KEY(user_fk) REFERENCES users(id) ON DELETE SET NULL
+    );
 
 -- Add some data to each table
 INSERT INTO users (name) VALUES
